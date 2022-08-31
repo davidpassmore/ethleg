@@ -1,0 +1,32 @@
+---
+title: "opinions"
+author: "David L. Passmore"
+date: "2022-08-28"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Install
+install.packages("tm")  # for text mining
+install.packages("SnowballC") # for text stemming
+install.packages("wordcloud") # word-cloud generator 
+install.packages("RColorBrewer") # color palettes
+install.packages("syuzhet") # for sentiment analysis
+install.packages("ggplot2") # for plotting graphs
+# Load
+library("tm")
+library("SnowballC")
+library("wordcloud")
+library("RColorBrewer")
+library("syuzhet")
+library("ggplot2")
+
+# Read the text file from local machine , choose file interactively
+text <- readLines(file.choose())
+# Load the data as a corpus
+TextDoc <- Corpus(VectorSource(text))
+
+
